@@ -1,13 +1,16 @@
-- hosts: all
+---
+- name: uses of tags
+  hosts: all
   tasks:
     - name: install vsftpd
       yum:
         name: vsftpd
         state: installed
-
+      tags: [ never, beta ]
 
 
     - name: install httpd
       yum:
          name: httpd
-         state: installed 
+         state: installed
+      tags: [ never, dev ]
